@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Icon Mouseover Message</title>
+  <style>
+    .icon-container {
+      position: relative;
+    }
+
+    .icon {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .message {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+
+<div class="icon-container">
+  <div class="icon" id="icon">i</div>
+  <div class="message" id="message">This is a tooltip message.</div>
+</div>
+
+<script>
+  const icon = document.getElementById('icon');
+  const message = document.getElementById('message');
+
+  icon.addEventListener('mouseover', () => {
+    const iconRect = icon.getBoundingClientRect();
+    const iconX = iconRect.left + window.scrollX + iconRect.width / 2;
+    const iconY = iconRect.top + window.scrollY + iconRect.height;
+
+    message.style.left = `${iconX}px`;
+    message.style.top = `${iconY}px`;
+    message.style.display = 'block';
+  });
+
+  icon.addEventListener('mouseout', () => {
+    message.style.display = 'none';
+  });
+</script>
+
+</body>
+</html>

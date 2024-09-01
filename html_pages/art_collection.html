@@ -1,0 +1,62 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>art collection</title>
+  
+  <link rel="stylesheet" href = '../css_pages/art_collection.css'>
+ 
+ </head>
+  <body >
+      <div class = "hero">
+        <nav> 
+        <ul>
+          <li><a href = "/exhibitions">Exhibitions</a></li>
+          <li><a href = "/workshops">Workshops</a></li>
+          <li><a href = "/mycart">Cart</a></li>
+        </ul>
+        <img src = "../svgs/person.svg" class = "user-pic" onclick = "toggleMenu()">
+        <!-- <img src = "../svgs/brightness-high.svg" class = "color-mode"> -->
+        <div class="sub-menu-wrap" id = "subMenu">
+          <div class="sub-menu">
+            <div class="user-info">
+              <img src = "../svgs/person.svg">
+              <a href = "./profilePage.html"></a>
+            </div>
+            <hr>
+            <a href = "../html_pages/editProfile.html" class = "sub-menu-link">
+              <img src = "../svgs/person-square.svg">
+              <p>Edit profile</p>
+              <span>></span>
+            </a>
+            <a href = "../html_pages/create.html" class = "sub-menu-link">
+              <img src = "../svgs/plus-square.svg">
+              <p>Post Art</p>
+              <span>></span>
+            </a>
+            <a href = "#" class = "sub-menu-link">
+              <img src = "../svgs/card-list.svg">
+              <p>Orders</p>
+              <span>></span>
+            </a>
+            <a href = "/logout" class = "sub-menu-link">
+              <img src = "../svgs/box-arrow-right.svg">
+              <p>Sign-out</p>
+              <span>></span>
+            </a>
+          </div>
+        </div>
+      </nav>
+      </div>
+      <section>
+        <div class="arts">
+             
+        </div>
+      </section>
+        
+      <script src="../scripts/art_collection.js"></script>
+ 
+  </body>
+  
+ </html>

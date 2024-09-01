@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+  }
+  
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+   
+  .sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+
+  
+#image{
+    width:90%;
+    
+    padding-left:5%;
+    padding-top:5%;
+  
+  }
+  .card{
+    border:1px solid black;
+    width:22%;
+    box-shadow: 10px solid green;
+    padding-bottom: 10px;
+    margin-left: 2%;
+    margin-top: 5%;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Thick box shadow */
+  }
+  
+  .para{
+    text-align: center;
+    padding:8px 0px;
+  }
+  
+.card div{
+
+    display: flex;
+
+    justify-content: center;
+
+}
+button {
+    background-color: #4CAF50;  
+    border: none;  
+    color: white;  
+    padding: 2% 5%;  
+    text-align: center; 
+    text-decoration: none;  
+    display: inline-block;  
+    font-size: 16px; 
+    margin: 1%;  
+    cursor: pointer;  
+    border-radius: 4px; 
+    width: 90%; 
+    max-width: 200px; 
+}
+
+  
+/* Hover effect */
+button:hover {
+    background-color: #45a049; /* Darker green */
+}
+#root{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+}
+.welcome-bar{
+    /* border:2px solid blue; */
+    border-radius:5px;
+    text-align: center;
+    background-color: #f0f0f0; /* Background color */
+    padding: 10px; /* Padding around content */
+    border-bottom: 2px solid #ccc; 
+
+}
+@media screen and (max-width: 1024px){
+  #root{
+     padding-top: 100px;
+  }
+}
+
+@media screen and (max-width: 768px){
+ #root{
+   padding-top: 150px;
+   display:block;
+ }
+ .card{
+   border:1px solid black;
+   width:80%;
+   box-shadow: 10px solid green;
+   padding-bottom: 10px;
+   margin-left: 10%;
+   margin-top: 5%;
+   border-radius: 5px; /* Rounded corners */
+   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Thick box shadow */
+ }
+ 
+}
+
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshops</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .workshop {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .workshop h2 {
+            margin-top: 0;
+        }
+        .workshop img {
+            max-width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upcoming Workshops</h1>
+        <div id="workshops"></div>
+    </div>
+
+    <script>
+        // Fetch workshops from the server
+        fetch('/info/workshops')
+            .then(response => response.json())
+            .then(workshops => {
+                const workshopsContainer = document.getElementById('workshops');
+
+                workshops.forEach(workshop => {
+                    const workshopElement = document.createElement('div');
+                    workshopElement.classList.add('workshop');
+                    workshopElement.innerHTML = `
+                        <h2>${workshop.title}</h2>
+                        <p><strong>Description:</strong> ${workshop.description}</p>
+                        <p><strong>Date:</strong> ${new Date(workshop.date).toLocaleDateString()}</p>
+                        <p><strong>Time:</strong> ${workshop.time}</p>
+                        <p><strong>Location:</strong> ${workshop.location}</p>
+                        <p><strong>Contact Name:</strong> ${workshop.contactName}</p>
+                        <p><strong>Contact Email:</strong> ${workshop.contactEmail}</p>
+                        <p><strong>Contact Phone:</strong> ${workshop.contactPhone}</p>
+                        <p><strong>Art Type:</strong> ${workshop.artType}</p>
+                        <p><strong>Duration:</strong> ${workshop.duration} hours</p>
+                        <p><strong>Fee:</strong> $${workshop.fee}</p>
+                        <p><strong>Capacity:</strong> ${workshop.capacity}</p>
+                        
+                    `;
+                    workshopsContainer.appendChild(workshopElement);
+                });
+            })
+            .catch(error => console.error('Error fetching workshops:', error));
+    </script>
+</body>
+</html>

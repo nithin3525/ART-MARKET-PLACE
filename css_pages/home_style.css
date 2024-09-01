@@ -1,0 +1,34 @@
+#heading{
+    color:orange;
+    font-size: x-large;
+}
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+header{
+    overflow: hidden;
+    position:fixed;
+    top:0;
+    width:80%;
+   
+}
+.main {
+    margin-top: 80px; /* Add a top margin to avoid content overlay */
+}
+
+.content {
+    position: relative;
+    top:50px;
+     
+}
+img{
+    z-index: -1;
+}
+.reduced-opacity {
+    opacity: 0.5; /* Adjust the opacity value as needed */
+    transition: opacity 0.3s ease; /* Smooth transition effect */
+}
+ 
+ 
+ 
